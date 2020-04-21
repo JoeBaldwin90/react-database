@@ -11,13 +11,13 @@ export default class EditProduct extends Component {
       userInputs: {},
     };
 
-    this.updateUserInputForm = this.updateUserInputForm.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
     this.findRecord = this.findRecord.bind(this);
     this.updateSelectedProductId = this.updateSelectedProductId.bind(this);
     this.patchProductData = this.patchProductData.bind(this);
   }
 
-  updateUserInputForm(e) {
+  onInputChange(e) {
     this.setState({
       userInputs: {
         ...this.state.userInputs,
@@ -100,7 +100,7 @@ export default class EditProduct extends Component {
                 <input
                   type='number'
                   name='Unit cost'
-                  onChange={this.updateUserInputForm}
+                  onChange={this.onInputChange}
                 />
               </label>
               <label>
@@ -108,7 +108,7 @@ export default class EditProduct extends Component {
                 <input
                   type='number'
                   name='Minutes'
-                  onChange={this.updateUserInputForm}
+                  onChange={this.onInputChange}
                 />
               </label>
               <label>
@@ -116,7 +116,7 @@ export default class EditProduct extends Component {
                 <input
                   type='number'
                   name='Texts'
-                  onChange={this.updateUserInputForm}
+                  onChange={this.onInputChange}
                 />
               </label>
               <label>
@@ -124,7 +124,7 @@ export default class EditProduct extends Component {
                 <input
                   type='number'
                   name='Data (GB)'
-                  onChange={this.updateUserInputForm}
+                  onChange={this.onInputChange}
                 />
               </label>
               <label>
@@ -132,7 +132,7 @@ export default class EditProduct extends Component {
                 <input
                   type='number'
                   name='Contract cost (24mo)'
-                  onChange={this.updateUserInputForm}
+                  onChange={this.onInputChange}
                 />
               </label>
               <button type='submit'>Submit</button>

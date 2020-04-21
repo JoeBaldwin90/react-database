@@ -8,7 +8,7 @@ export default class CreateProduct extends Component {
       userInputs: {},
       loading: false,
     };
-
+    this.onInputChange = this.onInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -31,7 +31,7 @@ export default class CreateProduct extends Component {
             Description: this.state.userInputs.description,
             Link: this.state.userInputs.link,
             Brand: this.state.userInputs.brand,
-            "Unit cost": parseInt(this.state.userInputs['unit-cost']),
+            "Unit cost": parseInt(this.state.userInputs["unit-cost"]),
             "In stock": true,
             Minutes: parseInt(this.state.userInputs.minutes),
             Texts: parseInt(this.state.userInputs.texts),
@@ -58,17 +58,18 @@ export default class CreateProduct extends Component {
       .catch((error) => console.log("error", error));
   };
 
-  handleSubmit(event) {  // Refactor this too!!!
-    const inputs = document.querySelectorAll("#create-product-form input");
-    let formState = {};
-    for (let i = 0; i < inputs.length; i++) {
-      formState[inputs[i].id] = inputs[i].value;
-    }
+  onInputChange(e) {
     this.setState({
-      userInputs: formState,
+      userInputs: {
+        ...this.state.userInputs,
+        [e.target.id]: e.target.value,
+      },
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
     this.createProduct();
-    event.preventDefault();
   }
 
   render() {
@@ -77,43 +78,93 @@ export default class CreateProduct extends Component {
         <form onSubmit={this.handleSubmit} id='create-product-form'>
           <label>
             Name:
-            <input type='text' id='name' />
+            <input
+              type='text'
+              id='name'
+              name='Name'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Images:
-            <input type='text' id='images' />
+            <input
+              type='text'
+              id='images'
+              name='Images'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Description:
-            <input type='text' id='description' />
+            <input
+              type='text'
+              id='description'
+              name='Description'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Link:
-            <input type='text' id='link' />
+            <input
+              type='text'
+              id='link'
+              name='Link'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Brand:
-            <input type='text' id='brand' />
+            <input
+              type='text'
+              id='brand'
+              name='Brand'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Unit Cost:
-            <input type='number' id='unit-cost' />
+            <input
+              type='number'
+              id='unit-cost'
+              name='Unit cost'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Minutes:
-            <input type='number' id='minutes' />
+            <input
+              type='number'
+              id='minutes'
+              name='Minutes'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Texts:
-            <input type='number' id='texts' />
+            <input
+              type='number'
+              id='texts'
+              name='Texts'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Data:
-            <input type='number' id='data' />
+            <input
+              type='number'
+              id='data'
+              name='Data (GB)'
+              onChange={this.onInputChange}
+            />
           </label>
           <label>
             Contract:
-            <input type='number' id='contract' />
+            <input
+              type='number'
+              id='contract'
+              name='Contract cost (24mo)'
+              onChange={this.onInputChange}
+            />
           </label>
           <button type='submit'>Submit</button>
         </form>
