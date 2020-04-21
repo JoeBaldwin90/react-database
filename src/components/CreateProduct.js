@@ -115,13 +115,9 @@ export default class CreateProduct extends Component {
             Contract:
             <input type='number' id='contract' />
           </label>
-          <button type='submit'>Submit</button>/>
+          <button type='submit'>Submit</button>
         </form>
       </Fragment>
     );
   }
 }
-
-// document.querySelectorAll('#create-product-form input')
-// var myObj = {}
-// for (let i=0; i<inputs.length; i++) { myObj[inputs[i].id] = inputs[i].value }
