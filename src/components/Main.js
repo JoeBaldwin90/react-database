@@ -50,7 +50,7 @@ class Main extends Component {
 
   render() {
     return (
-      <main className='Main'>
+      <main className='main'>
         <Switch>
           <Route
             exact
@@ -71,6 +71,10 @@ class Main extends Component {
             exact
             path='/delete-product'
             render={() => <DeleteProduct />}
+          />
+          <Route
+            path='/*'
+            render={() => <DisplayProductData products={this.state.records} />}
           />
         </Switch>
       </main>

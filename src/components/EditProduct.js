@@ -76,6 +76,7 @@ export default class EditProduct extends Component {
     const { selectedProduct } = this.state;
     return (
       <Fragment>
+        <h1>Edit a product</h1>
         <form onSubmit={this.findRecord} id='find-record'>
           <label>
             Find Record ID:
@@ -90,10 +91,10 @@ export default class EditProduct extends Component {
 
         {selectedProduct["Name"] !== undefined && (
           <div>
-            <p>
-              Edit Record for {selectedProduct["Brand"]}{" "}
+            <h3>
+              Edit Record for: {selectedProduct["Brand"]}{" "}
               {selectedProduct["Name"]}
-            </p>
+            </h3>
             <form onSubmit={this.patchProductData} id='edit-product-form'>
               <label>
                 Unit Cost:
@@ -135,7 +136,7 @@ export default class EditProduct extends Component {
                   onChange={this.onInputChange}
                 />
               </label>
-              <button type='submit'>Submit</button>
+              <input type='submit' value='Submit'/>
             </form>
           </div>
         )}

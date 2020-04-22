@@ -4,71 +4,76 @@ import styled from "styled-components";
 
 const Navigation = styled.nav`
   width: 100%;
+  max-width: 600px;
 `;
 
 const ListWrapper = styled.ul`
   display: flex;
-  justify-content: space-around;
-  width: 50vw;
-  margin: 1em auto;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em 10vw;
+`;
+
+const LinkWrapper = styled.li`
+  padding: 1em 0;
 `;
 
 const Header = () => (
   <header>
     <Navigation>
       <ListWrapper>
-        <li>
+        <LinkWrapper>
           <NavLink
             exact
             to='/'
             activeClassName='selected'
             activeStyle={{
-              fontWeight: "bold",
-              color: "blue",
+              color: "#4CAF50",
+              borderBottom: "solid 2px #4CAF50",
             }}
           >
             Home
           </NavLink>
-        </li>
-        <li>
+        </LinkWrapper>
+        <LinkWrapper>
           <NavLink
             exact
             to='/delete-product'
             activeClassName='selected'
             activeStyle={{
-              fontWeight: "bold",
-              color: "blue",
+              color: "#4CAF50",
+              borderBottom: "solid 2px #4CAF50",
             }}
           >
             Delete
           </NavLink>
-        </li>
-        <li>
+        </LinkWrapper>
+        <LinkWrapper>
           <NavLink
             exact
             to='/create-product'
             activeClassName='selected'
             activeStyle={{
-              fontWeight: "bold",
-              color: "blue",
+              color: "#4CAF50",
+              borderBottom: "solid 2px #4CAF50",
             }}
           >
             Create
           </NavLink>
-        </li>
-        <li>
+        </LinkWrapper>
+        <LinkWrapper>
           <NavLink
             exact
             to='/edit-product'
             activeClassName='selected'
             activeStyle={{
-              fontWeight: "bold",
-              color: "blue",
+              color: "#4CAF50",
+              borderBottom: "solid 2px #4CAF50",
             }}
           >
             Edit
           </NavLink>
-        </li>
+        </LinkWrapper>
       </ListWrapper>
     </Navigation>
   </header>
