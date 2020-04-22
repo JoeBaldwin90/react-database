@@ -4,6 +4,7 @@ import DeleteProduct from "./DeleteProduct";
 import CreateProduct from "./CreateProduct";
 import EditProduct from "./EditProduct";
 import DisplayProductData from "./DisplayProductData";
+import ProductView from "./ProductView";
 
 class Main extends Component {
   constructor(props) {
@@ -71,6 +72,12 @@ class Main extends Component {
             exact
             path='/delete-product'
             render={() => <DeleteProduct />}
+          />
+          <Route
+            path='/product/:id'
+            render={(props) => (
+              <ProductView {...props} product={this.state.records.find(product => product.id === props.match.params.id)} />
+            )}
           />
           <Route
             path='/*'
