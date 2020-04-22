@@ -58,6 +58,7 @@ class DeleteProduct extends Component {
   render() {
     return (
       <Fragment>
+        <h1>Delete a product</h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="delete">
             Delete:

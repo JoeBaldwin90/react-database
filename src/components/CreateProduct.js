@@ -75,6 +75,7 @@ export default class CreateProduct extends Component {
   render() {
     return (
       <Fragment>
+        <h1>Create a product</h1>
         <form onSubmit={this.handleSubmit} id='create-product-form'>
           <label>
             Name:
@@ -166,7 +167,7 @@ export default class CreateProduct extends Component {
               onChange={this.onInputChange}
             />
           </label>
-          <button type='submit'>Submit</button>
+          <input type='submit' value='Submit' />
         </form>
       </Fragment>
     );

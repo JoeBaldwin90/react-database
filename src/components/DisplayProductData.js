@@ -1,17 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const DisplayProductData = (props) => (
-  <div className='App'>
-    <p>Display Product Data Here</p>
+  <Fragment>
+    <h1>Product Data Here</h1>
     <ul>
       {props.products.map((product, index) => (
         <li key={index}>
-          {product.fields.Brand} - {product.fields.Name} -{" "}
-          {product.id}
+          {product.fields.Brand} - {product.fields.Name} - {product.id}
         </li>
       ))}
     </ul>
-  </div>
+  </Fragment>
 );
 
 export default DisplayProductData;
