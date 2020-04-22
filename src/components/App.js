@@ -6,7 +6,7 @@ import Header from "./Header";
 
 const App = () => (
   <Fragment>
-    <GlobalStyles dark />
+    <GlobalStyles />
     <Header />
     <Main />
   </Fragment>
