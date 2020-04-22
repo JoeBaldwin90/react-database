@@ -30,6 +30,7 @@ const Header = () => (
             activeStyle={{
               color: "#4CAF50",
               borderBottom: "solid 2px #4CAF50",
+              fontStyle: "italic",
             }}
           >
             Home
@@ -43,6 +44,7 @@ const Header = () => (
             activeStyle={{
               color: "#4CAF50",
               borderBottom: "solid 2px #4CAF50",
+              fontStyle: "italic",
             }}
           >
             Delete
@@ -56,6 +58,7 @@ const Header = () => (
             activeStyle={{
               color: "#4CAF50",
               borderBottom: "solid 2px #4CAF50",
+              fontStyle: "italic",
             }}
           >
             Create
@@ -69,6 +72,7 @@ const Header = () => (
             activeStyle={{
               color: "#4CAF50",
               borderBottom: "solid 2px #4CAF50",
+              fontStyle: "italic",
             }}
           >
             Edit
