@@ -14,9 +14,9 @@ export default class CreateProduct extends Component {
 
   createProduct = () => {
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer keymPR3okrntrIHuh");
+    myHeaders.append("Authorization", process.env.REACT_APP_AUTH_TOKEN);
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "brw=brwK5GFDj0ZFwA1Is");
+    myHeaders.append("Cookie", process.env.REACT_APP_COOKIE);
 
     let raw = {
       records: [
