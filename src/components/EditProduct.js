@@ -68,8 +68,11 @@ export default class EditProduct extends Component {
     const selected = this.props.products.find(
       ({ id }) => id === this.state.editId
     );
-    this.setState({ selectedProduct: selected.fields });
-    console.log(selected.fields);
+    if (selected) {
+      this.setState({ selectedProduct: selected.fields });
+    } else {
+      alert("Could not find selected product");
+    }
   }
 
   render() {
@@ -136,7 +139,7 @@ export default class EditProduct extends Component {
                   onChange={this.onInputChange}
                 />
               </label>
-              <input type='submit' value='Submit'/>
+              <input type='submit' value='Submit' />
             </form>
           </div>
         )}

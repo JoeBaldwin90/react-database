@@ -7,7 +7,7 @@ const DisplayProductData = (props) => (
     <ul>
       {props.products.map((product, index) => (
         <li key={index}>
-          {product.fields.Brand} - {product.fields.Name} - {product.id}
+          {product.fields.Brand} - {product.fields.Name} -{" "}
           <strong>
             <NavLink
               to={`/product/${product.id}`}
