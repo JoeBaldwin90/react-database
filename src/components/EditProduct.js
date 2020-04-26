@@ -30,9 +30,9 @@ export default class EditProduct extends Component {
     e.preventDefault();
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer keymPR3okrntrIHuh");
+    myHeaders.append("Authorization", process.env.REACT_APP_AUTH_TOKEN);
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "brw=brwK5GFDj0ZFwA1Is");
+    myHeaders.append("Cookie", process.env.REACT_APP_COOKIE);
 
     var raw = {
       records: [

@@ -19,8 +19,8 @@ class DeleteProduct extends Component {
     });
 
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer keymPR3okrntrIHuh");
-    myHeaders.append("Cookie", "brw=brwK5GFDj0ZFwA1Is");
+    myHeaders.append("Authorization", process.env.REACT_APP_AUTH_TOKEN);
+    myHeaders.append("Cookie", process.env.REACT_APP_COOKIE);
 
     let raw = "";
 
